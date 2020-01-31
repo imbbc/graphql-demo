@@ -1,0 +1,25 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: "update"
+    database-platform: "${SPRING_JPA_DATABASE_PLATFORM:org.hibernate.dialect.PostgreSQLDialect}"
+    properties:
+      hibernate:
+        format_sql: true
+        default_schema: "user_schema"
+        jdbc:
+          lob.non_contextual_creation: "true"
+  datasource:
+    driverClassName: "org.postgresql.Driver"
+    url: "${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:15432/user_db}"
+    username: "${SPRING_DATASOURCE_USERNAME:admin}"
+    password: "${SPRING_DATASOURCE_PASSWORD:zaq1ZAQ!}"
+
+graphql:
+  spqr:
+    gui:
+      enabled: true
+
+server:
+  port: 8000
